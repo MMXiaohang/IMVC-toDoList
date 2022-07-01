@@ -1,0 +1,164 @@
+:root {
+    --checked-color: #fff;
+    --checked-bg:rgb(101,141,181);
+    --unchecked-color: #cfcece;
+    --unchecked-bg:rgb(249,249,249);
+    --background-color:#fff;
+    --font-color:#dcdcdc;
+}
+
+body {
+    padding: 50px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.todoListMain .header input {
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+}
+.todoListMain .header button {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px;
+    background-color: #0066FF;
+    color: #FFF;
+    border: 2px solid #0066FF;
+}
+
+.todoListMain .header button:hover {
+    background-color: #003399;
+    border: 2px solid #003399;
+    cursor: pointer;
+}
+
+.todoListMain .theList {
+    list-style: none;
+    padding-left: 0;
+    width: 80%;
+}
+
+.todoListMain .theList li {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    background-color: rgba(234,222,200,.5);
+    padding: 15px;
+    margin-bottom: 5px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    height: 40px;
+}
+
+.todoListMain .theList li .content{
+    color: #000;
+    flex: 4;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.todoListMain .theList li input[type=checkbox]{
+    display: none;
+}
+
+.todoListMain .theList li .cb-label{
+    height: 30px;
+    width: 30px;
+    background-color: var(--background-color);
+    border: 3px solid var(--unchecked-color);
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    transition: border-color ease 0.4s;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.todoListMain .theList li .cb-label.finished{
+    background-color: var(--checked-bg);
+}
+
+.todoListMain .theList li .content.finished
+{
+    text-decoration: line-through;
+    color: darkgray;
+}
+
+.todoListMain .theList li .time{
+    flex: 2;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.todoListMain .theList li .time .startTime{
+    color: #666;
+    font-size: 14px;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.todoListMain .theList li .time .finishedTime{
+    color: #333;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+
+.todoListMain .theList li .close{
+    flex: 0.2;
+    display: flex;
+    color: red;
+    width: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    font-size: 16px;
+    visibility: hidden;
+}
+
+.todoListMain .theList li .close.show{
+    visibility: visible;
+    cursor: pointer;
+}
+
+
+.todoListMain .footer{
+    width: 78%;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+    align-items: center;
+    font-size: 14px;
+    color: #cccccc;
+}
+
+.todoListMain .footer .operation{
+    display: flex;
+    justify-content: center;
+}
+
+.todoListMain .footer .operation div{
+    flex:1;
+    display: flex;
+    padding: 0 10px;
+    margin: 0 10px;
+    border: 1px solid #cfcece;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.todoListMain .footer .clear{
+    padding: 0 10px;
+    margin: 0 5px;
+    border: 1px solid #cfcece;
+    border-radius: 5px;
+    cursor: pointer;
+}
